@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Feedback</title>
+</head>
+
+<body>
+
+<h2>Event Feedback Form</h2>
+
+<form>
+
+    <!-- onblur -->
+
+    Phone Number:
+
+    <input type="text"
+           id="phone"
+           onblur="validatePhone()">
+
+    <p id="phoneMsg"></p>
+
+
+    <!-- onchange -->
+
+    Select Event:
+
+    <select id="event"
+            onchange="showFee()">
+
+        <option value="">Select</option>
+        <option value="500">Workshop</option>
+        <option value="1000">Hackathon</option>
+
+    </select>
+
+    <p id="fee"></p>
+
+
+    <!-- keyboard event -->
+
+    Feedback:
+
+    <textarea id="feedback"
+              onkeyup="countChars()">
+    </textarea>
+
+    <p>Characters:
+        <span id="count">0</span>
+    </p>
+
+
+    <!-- onclick -->
+
+    <button type="button"
+            onclick="showConfirm()">
+        Submit
+    </button>
+
+</form>
+
+<br>
+
+<!-- ondblclick -->
+
+<img src="https://via.placeholder.com/200"
+     id="img"
+     ondblclick="enlargeImage()">
+
+<script>
+
+function validatePhone()
+{
+    let phone =
+    document.getElementById("phone").value;
+
+    if(phone.length == 10)
+    {
+        document.getElementById("phoneMsg").innerHTML =
+        "Valid Number";
+    }
+    else
+    {
+        document.getElementById("phoneMsg").innerHTML =
+        "Invalid Number";
+    }
+}
+
+function showFee()
+{
+    let fee =
+    document.getElementById("event").value;
+
+    document.getElementById("fee").innerHTML =
+    "Fee: Rs." + fee;
+}
+
+function showConfirm()
+{
+    alert("Submitted Successfully");
+}
+
+function enlargeImage()
+{
+    document.getElementById("img").width = 400;
+}
+
+function countChars()
+{
+    let text =
+    document.getElementById("feedback").value;
+
+    document.getElementById("count").innerHTML =
+    text.length;
+}
+
+</script>
+
+</body>
+
+</html>

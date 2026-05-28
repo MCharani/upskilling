@@ -3,6 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>local community event portal</title>
+    <style>
+
+       .highlight{
+       color:red;
+      }
+      #welcome-message{
+        color:rgb(22, 135, 56);
+      }
+      
+
+
+    </style>
     </head>
     <body>
          
@@ -10,11 +22,141 @@
         <nav>
           <a href="home.html" target="_blank">Home</a>
           <a href="events.html" target ="_blank">Events</a>  
-          <a href="contact.html" target="_blank">Contact</a>  
+          <a href="contact.html" target="_blank">Contact</a> 
+          <a href="register.html" target="_blank">Register</a> 
+          <a href="event_feedback.html">Event Feedback Form</a>
+          <br>
+          <a href="preferences.html">User Preferences</a>
+            <a href="nearby.html">Find Nearby Events</a>
+        </nav>
+          
+
         </nav>
 
             <!-- Main Section -->
           <main>
+            <div id="welcome-message">
+            <h1>Welcome to the Local Community Event Portal</h1>
+            <p>Discover and participate in exciting events happening in your local community. From cultural festivals to sports tournaments, there's something for everyone!</p>
+            
+            </div>
+            <div class="highlight">
+            <h2>Featured Events</h2>
+            
+            <span style="color:red;">
+                Offer
+           </span>
+           </div>
+
+
+
+
+           <----table>
+                <table border="1">
+
+       <tr>
+
+       <td>
+    <img src="event1.jpg" width="200">
+    <p>Music Event</p>
+    </td>
+
+    <td>
+    <img src="event2.jpg" width="200">
+    <p>Food Festival</p>
+    </td>
+
+    <td>
+    <img src="event3.jpg" width="200">
+    <p>Dance Show</p>
+    </td>
+
+    </tr>
+
+    <tr>
+
+    <td>
+     <img src="event4.jpg" width="200">
+      <p>Art Event</p>
+         </td>
+
+        <td>
+   <img src="event5.jpg" width="200">
+  <p>Sports Day</p>
+</td>
+
+<td>
+<img src="event6.jpg" width="200">
+<p>Workshop</p>
+</td>
+
+</tr>
+
+</table>
+<div>
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Video Invite</title>
+</head>
+
+<body>
+
+<h2>Event Promo Video</h2>
+
+<form>
+
+    Name:
+    <input type="text" id="name">
+
+    <br><br>
+
+    Feedback:
+    <textarea id="feedback"></textarea>
+
+</form>
+
+<br>
+
+<video width="400"
+       controls
+       oncanplay="videoReady()">
+
+    <source src="sample.mp4" type="video/mp4">
+
+</video>
+
+<p id="msg"></p>
+
+<script>
+
+function videoReady()
+{
+    document.getElementById("msg").innerHTML =
+    "Video ready to play";
+}
+
+window.onbeforeunload = function()
+{
+    let name =
+    document.getElementById("name").value;
+
+    let feedback =
+    document.getElementById("feedback").value;
+
+    if(name != "" || feedback != "")
+    {
+        return "You have unfinished form data";
+    }
+}
+
+</script>
+
+</body>
+
+</html>
+</div>
           </main>
 
         <!-- Footer Section -->
